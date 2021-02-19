@@ -14,6 +14,20 @@
 // 프로그램이종료되었습니다.
 // 정답회수 오답횟수
 
-const a=10;
-const b=20;
-console.log(`a+b=${a+b}`);
+
+while(true){
+   
+   var x = Math.floor(Math.random() * 101);
+   var y = Math.floor(Math.random() * 101);
+   var z = +prompt(`${x} + ${y} = ??`);
+
+   if(x + y == z) {
+   alert("정답입니다.");
+} else if(x + y !==z && z !== 0) {
+   alert("오답입니다.");
+} else if(z === 0) {
+   // alert("정답횟수 ${}  오답횟수 ${}");
+   break; 
+}
+}
+   alert("프로그램이 종료되었습니다.");
