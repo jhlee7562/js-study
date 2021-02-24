@@ -48,7 +48,7 @@ console.log(dog);
 delete dog.owner;
 console.log(dog);
 
-// fot ~ in (ES6)
+// fot ~ in (ES6)  밸류값 뽑기
 console.log("=============================");
 
 for( var key in cat) {
