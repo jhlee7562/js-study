@@ -1,3 +1,4 @@
+
 /* reset */
 a {
     color: inherit;
@@ -16,7 +17,7 @@ section.main {
     width: 40%;
     background: #f6f6f6;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5px rgba(0,0,0, 0.7);
 
     position: absolute;
     left: 50%;
@@ -35,7 +36,7 @@ section.main .main-title {
 }
 
 section.main .number-wrapper {
-    padding: 50px 20px;
+    padding: 50px 20px;    
 }
 
 section.main .number-wrapper h2 {
@@ -57,7 +58,6 @@ section.main .number-wrapper h2 em {
     border-radius: 10px;
     margin: 30px auto 0;
     padding: 30px 50px;
-
     overflow: auto;
 
     display: grid;
@@ -89,15 +89,12 @@ section.main .number-wrapper h2 em {
 #numbers .icon:nth-child(4n) {
     background: orangered;
 }
-
 #numbers .icon:nth-child(4n - 1) {
     background: skyblue;
 }
-
 #numbers .icon:nth-child(4n - 2) {
     background: yellowgreen;
 }
-
 #numbers .icon:nth-child(4n - 3) {
     background: orange;
 }
@@ -108,7 +105,7 @@ section.main .number-wrapper h2 em {
     position: absolute;
     top: 50%;
     right: 20%;
-    transform : translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .result div[id] {
@@ -123,12 +120,10 @@ section.main .number-wrapper h2 em {
     align-items: center;
     margin-bottom: 30px;
 }
-
 #up {
     background: red;
 }
-
-#down {
+#down  {
     background: blue;
 }
 
@@ -145,5 +140,71 @@ section.main .number-wrapper h2 em {
     }
     100% {
         transform: translateY(-20px);
+    }
+}
+
+
+/* finish 영역 */
+#finish {
+    width: 60%;
+    height: 200px;
+    background: tomato;
+    font-size: 80px;
+    font-weight: 700;
+    border: 2px solid #000;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center;
+    line-height: 200px; */
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    z-index: -10;
+}
+
+#finish.show {
+    animation: showUp 1s linear forwards;
+}
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        z-index: -10;
+        top: -50%;
+    }
+    50% {
+        opacity: 0.5;
+        top: 0;
+    }
+    100% {
+        opacity: 1;
+        z-index: 10;
+        top: 50%;
+    }
+}
+
+/* 정답 아이콘에 id="move"가 붙으면 해당 아이콘이 커지면서 움직이도록 */
+#move {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    z-index: 10;
+    border: 4px dashed #000;
+    animation: move 2s linear forwards;
+}
+@keyframes move {
+    0% {
+        top: 0;
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        top: 10%;
+        transform: translateX(-50%) scale(2);
     }
 }
